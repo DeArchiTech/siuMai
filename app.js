@@ -1,5 +1,6 @@
 var express = require('express')
 var app = express()
+//var transporter = nodemailer.createTransport(transport[, defaults])
 
 app.set('view engine', 'ejs');
 app.use(express.static( "public" ));
@@ -19,7 +20,7 @@ app.get('/about', function(req,res){
 	});
 });
 
-var port = process.env.PORT || 5000
+var port = process.env.PORT || 3000
 
 var server = app.listen(port, function() {
 	console.log('Listening on port 3000');
