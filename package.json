@@ -9,7 +9,7 @@
   "author": "noobiehacker",
   "dependencies": {
     "ejs": "^2.3.4",
-    "express": "^3.5.1",
+    "express": "4.13.3",
     "gulp": "^3.6.0"
   },
   "license": "ISC"

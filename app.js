@@ -1,24 +1,44 @@
-var express = require('express')
-var app = express()
-//var transporter = nodemailer.createTransport(transport[, defaults])
+var express = require('express');
+var app = express();
+var routes = require('./routes/myindex');
 
-app.set('view engine', 'ejs');
+var nodemailer = require('nodemailer');
+var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'noreply@easyasolution.com',
+        pass: 'computer1013'
+    }
+}, {
+    // default values for sendMail method
+    from: 'noreply@easyasolution.com',
+    headers: {
+        'My-Awesome-Header': '123'
+    }
+});
+
 app.use(express.static( "public" ));
 
-app.get('/', function(req,res){
-	res.render('default', {
-		title: 'Home',
-		classname: 'home',
-		users: ['Ray', 'Morten', 'Jame']
+app.set('view engine', 'ejs');
+
+app.get('/', routes);
+
+app.get('/email', function(req,res){
+
+ 	var email =  'theeasyasolution@gmail.com'
+	var subject = req.param('username') + req.param('usernum')
+	var text = req.param('email') + req.param('usermessage')
+
+	transporter.sendMail({
+    	to: email,
+    	subject: subject,
+    	text: text
 	});
+
+	res.send("form submitted to" + email)
+
 });
 
-app.get('/about', function(req,res){
-	res.render('default', {
-		title: 'About Us',
-		classname: 'about'
-	});
-});
 
 var port = process.env.PORT || 5000
 
