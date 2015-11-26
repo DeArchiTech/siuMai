@@ -35,7 +35,7 @@ app.get('/email', function(req,res){
     	text: text
 	});
 
-	res.send("form submitted to" + email)
+	res.send("form submitted to: " + email "We will respond to your inquery within 48 hours")
 
 });
 
