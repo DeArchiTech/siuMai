@@ -109,15 +109,15 @@
 				<h3>Subscribe for more free stuff</h3>
 				<p>Enter your name and email</p>
 
-				<form action="" class="form-inline">
+				<form action="subscribe" class="form-inline">
 					<div class="form-group">
 						<label for="subscription">Subscribe</label>
-						<input type="text" class="form-control" id="subscription" placeholder="Yourname">
+						<input type="text" class="form-control" name="subscription" id="subscription" placeholder="Yourname">
 					</div>
 
 					<div class="form-group">
 						<label for="email">Email address</label>
-						<input type="text" class="form-control" id="email" placeholder="Enter your email">
+						<input type="text" class="form-control" name="email" id="email" placeholder="Enter your email">
 					</div>
 					<button type="submit" class="btn btn-default">Subscribe</button>
 					<hr>
@@ -413,7 +413,7 @@
 				</div>
 
 				<div class="col-lg-8">
-					<form action="/email" class="form-horizontal">
+					<form action="/contact" class="form-horizontal">
 
 						<div class="form-group">
 							<label for="username" class="col-lg-2 control-label">Name
@@ -470,17 +470,16 @@
 			<h3>Subscribe for more free stuff</h3>
 			<p>Enter your name and email</p>
 
-			<form action="MAILTO:davidkwokhochan@gmail.com" method="post" 
-				enctype="text/plain" class="form-inline">
+			<form action="subscribe" class="form-inline">
 
 				<div class="form-group">
 					<label for="subscription">Subscribe</label>
-					<input type="text" class="form-control" id="subscription" placeholder="Your name">
+					<input type="text" class="form-control" name="subscription" id="subscription" placeholder="Your name">
 				</div>
 
 				<div class="form-group">
 					<label for="email">Email address</label>
-					<input type="text" class="form-control" id="email" placeholder="Enter your email">
+					<input type="text" class="form-control" name="email" id="email" placeholder="Enter your email">
 				</div>
 				<button type="submit" class="btn btn-default">Subscribe</button>
 				<hr>

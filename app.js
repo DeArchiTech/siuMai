@@ -23,7 +23,7 @@ app.set('view engine', 'ejs');
 
 app.get('/', routes);
 
-app.get('/email', function(req,res){
+app.get('/contact', function(req,res){
 
  	var email =  'theeasyasolution@gmail.com'
 	var subject = req.param('username') + req.param('usernum')
@@ -35,9 +35,28 @@ app.get('/email', function(req,res){
     	text: text
 	});
 
-	res.send("form submitted to: " + email "We will respond to your inquery within 48 hours")
+	res.send("form submitted to: " + email + "We will respond to your inquery within 48 hours")
 
 });
+
+app.get('/subscribe', function(req,res){
+
+	var subscription = req.param('subscription')
+	var useremail = req.param('email')
+ 	var email =  'theeasyasolution@gmail.com'
+	var subject = 'Subscribe'
+
+	var text = "Subscription Name is : " + subscription + " Email Is : " + useremail
+	transporter.sendMail({
+    	to: email,
+    	subject: subject,
+    	text: text
+	});
+
+	res.send("Thank you for subscribing! " + subscription)
+
+});
+
 
 
 var port = process.env.PORT || 5000
