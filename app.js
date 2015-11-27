@@ -6,12 +6,12 @@ var nodemailer = require('nodemailer');
 var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'noreply@easyasolution.com',
+        user: 'theeasyasolution@gmail.com',
         pass: 'computer1013'
     }
 }, {
     // default values for sendMail method
-    from: 'noreply@easyasolution.com',
+    from: 'theeasyasolution@gmail.com',
     headers: {
         'My-Awesome-Header': '123'
     }
@@ -25,9 +25,16 @@ app.get('/', routes);
 
 app.get('/contact', function(req,res){
 
- 	var email =  'contactus@easyasolution.com'
-	var subject = req.param('username') + req.param('usernum')
-	var text = req.param('email') + req.param('usermessage')
+ 	var email =  'admin@easyasolution.com'
+	var subject = 'A wild student has appeared!'
+    
+    var usernameSubText = 'Users name IS : ' + req.param('username') + '\n'
+    var emailSubText = 'EMAIL IS : ' + req.param('email') + '\n'
+    var phoneNumberSubText = 'Phone Number IS : ' + req.param('usernum') + '\n'
+    var messageSubText = 'User Message IS : ' + req.param('usermessage') + '\n\n'
+    var positiveMessage = 'Great Job Dood!, Keep going at it'
+    
+    var text = usernameSubText + emailSubText + phoneNumberSubText + messageSubText + positiveMessage
 
 	transporter.sendMail({
     	to: email,
@@ -35,7 +42,7 @@ app.get('/contact', function(req,res){
     	text: text
 	});
 
-	res.send("form submitted to: " + email + "We will respond to your inquery within 48 hours")
+	res.send("form submitted to: " + email +'\n'+ "We will respond to your inquery within 48 hours")
 
 });
 
@@ -43,17 +50,23 @@ app.get('/subscribe', function(req,res){
 
 	var subscription = req.param('subscription')
 	var useremail = req.param('email')
-    var email =  'contactus@easyasolution.com'
-	var subject = 'Subscribe'
+    var email =  'admin@easyasolution.com'
+	var subject = 'A wild subscription has appeared'
 
-	var text = "Subscription Name is : " + subscription + " Email Is : " + useremail
+	var subscriptionSubtext = "Subscription Name is : " + subscription +'\n' 
+    var emailSubText = "Email Is : " + useremail +'\n'
+    var positiveMessage = 'Yes! +1 Subscriber, keep it going buddy'
+
+    var text = subscriptionSubtext + emailSubText + positiveMessage
 	transporter.sendMail({
     	to: email,
     	subject: subject,
     	text: text
 	});
 
-	res.send("Thank you for subscribing! " + subscription)
+	res.send("Thank you for subscribing! " + subscription +'\n'
+        +"We will send you free materials to your email: " + useremail
+        +" As soon as possible")
 
 });
 
