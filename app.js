@@ -25,7 +25,7 @@ app.get('/', routes);
 
 app.get('/contact', function(req,res){
 
- 	var email =  'theeasyasolution@gmail.com'
+ 	var email =  'contactus@easyasolution.com'
 	var subject = req.param('username') + req.param('usernum')
 	var text = req.param('email') + req.param('usermessage')
 
@@ -43,7 +43,7 @@ app.get('/subscribe', function(req,res){
 
 	var subscription = req.param('subscription')
 	var useremail = req.param('email')
- 	var email =  'theeasyasolution@gmail.com'
+    var email =  'contactus@easyasolution.com'
 	var subject = 'Subscribe'
 
 	var text = "Subscription Name is : " + subscription + " Email Is : " + useremail
