@@ -17,6 +17,53 @@
 
     <!-- Custom CSS -->
     <link href="css/round-about.css" rel="stylesheet">
+
+    <!-- Count Down Timer-->
+	<script TYPE="text/javascript" LANGUAGE="JavaScript">
+
+	dateFuture = new Date(2015,11,6,10,5,55);
+
+	function GetCount(){
+
+        dateNow = new Date();                                                                        //grab current date
+        amount = dateFuture.getTime() - dateNow.getTime();                //calc milliseconds between dates
+        delete dateNow;
+
+        // time is already past
+        if(amount < 0){
+                document.getElementById('countbox').innerHTML="Now!";
+        }
+        // date is still good
+        else{
+                days=0;hours=0;mins=0;secs=0;out="";
+
+                amount = Math.floor(amount/1000);//kill the "milliseconds" so just secs
+
+                days=Math.floor(amount/86400);//days
+                amount=amount%86400;
+
+                hours=Math.floor(amount/3600);//hours
+                amount=amount%3600;
+
+                mins=Math.floor(amount/60);//minutes
+                amount=amount%60;
+
+                secs=Math.floor(amount);//seconds
+
+                if(days != 0){out += days +" day"+((days!=1)?"s":"")+", ";}
+                if(days != 0 || hours != 0){out += hours +" hour"+((hours!=1)?"s":"")+", ";}
+                if(days != 0 || hours != 0 || mins != 0){out += mins +" minute"+((mins!=1)?"s":"")+", ";}
+                out += secs +" seconds";
+                document.getElementById('countbox').innerHTML=out;
+
+                setTimeout("GetCount()", 1000);
+    	    }
+	}
+
+	window.onload=function(){GetCount();}//call when everything has loaded
+
+	</script>
+	
 	
 </head>
 
@@ -115,13 +162,32 @@
 			<div class="container text-center">
 				<h2>
 				Subscribe to get our FREE Ebook
-				</h2>
-
+				</h2>				
 				<hr>
 
 				<h3>
-				"ACEING THE SAT EXAM IN 30 DAYS"
+				"How to get into Harvard when you're just above average!"
 				</h3>
+
+				<hr>
+
+				<div class="row text-center">
+					<div class="col-md-4">
+							<h4>
+								<font color="red">
+									Promotion Ends In
+								</font>
+							</h4>
+					</div>
+					<div class="col-md-4">
+							<h4>
+							<div id="countbox"></div>
+							</h4>
+					</div>
+					<div class="col-md-4">
+						<button type="submit" class="btn btn-danger navbar-btn btn-md">Subscribe</button>
+					</div>
+				</div>
 
 				<hr>
 
@@ -135,7 +201,7 @@
 						<label for="email">Email address</label>
 						<input type="text" class="form-control" name="email" id="email" placeholder="Enter your email">
 					</div>
-					<button type="submit" class="btn btn-default">Subscribe</button>
+
 					<hr>
 				</form>
 
@@ -630,14 +696,7 @@
 
 	<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js">
-	</script>
-
-	    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"/>
 	
 </body>	
 </html>
