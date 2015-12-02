@@ -1,4 +1,3 @@
-6
 var express = require('express');
 var app = express();
 var routes = require('./routes/myindex');
@@ -44,16 +43,8 @@ app.get('/contact', function(req,res){
     	subject: subject,
     	text: text
 	});
-
-    res.render('default', {
-        title: 'Home',
-        classname: 'home',
-        users: ['Ray', 'Morten', 'James']
-    });
     
-    /*
-	res.send("form submitted to: " + email +'\n'+ "We will respond to your inquery within 48 hours")
-    */
+	//es.send("form submitted to: " + email +'\n'+ "We will respond to your inquery within 48 hours")
 
 });
 
@@ -75,20 +66,12 @@ app.get('/subscribe', function(req,res){
     	subject: subject,
     	text: text
 	});
-
-    res.render('default', {
-        title: 'Home',
-        classname: 'home',
-        users: ['Ray', 'Morten', 'James']
-    });
-
+    
 	/*res.send("Thank you for subscribing! " + subscription +'\n'
         +"We will send you free materials to your email: " + useremail
         +" As soon as possible")*/
 
 });
-
-
 
 var port = process.env.PORT || 5000
 

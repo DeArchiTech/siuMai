@@ -16,7 +16,8 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/round-about.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+
     <!-- Count Down Timer-->
 	<script TYPE="text/javascript" LANGUAGE="JavaScript">
 
@@ -170,40 +171,46 @@
 				<hr>
 
 				<div class="row text-center">
-					<div class="col-md-4">
-							<h4>
-								<font color="red">
-									Promotion Ends In
-								</font>
-							</h4>
-					</div>
-					<div class="col-md-4">
-							<h4>
-							<div id="countbox"></div>
-							</h4>
-					</div>
-					<div class="col-md-4">
-						<button type="submit" class="btn btn-danger navbar-btn btn-md">Subscribe</button>
-					</div>
+
+					<h4>
+						<font color="red">
+							Promotion Ends In
+						</font>
+					</h4>
+
+					<h4>
+						<div id="countbox"></div>
+					</h4>
+
 				</div>
 
 				<hr>
 
 				<form action="subscribe" class="form-inline">
-					<div class="form-group">
-						<label for="subscription">Subscribe</label>
-						<input type="text" class="form-control" name="subscription" id="subscription" placeholder="Yourname">
+
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="subscription">Subscribe</label>
+							<input type="text" class="form-control" name="subscription" id="subscription" placeholder="Yourname">
+						</div>
 					</div>
 
-					<div class="form-group">
-						<label for="email">Email address</label>
-						<input type="text" class="form-control" name="email" id="email" placeholder="Enter your email">
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="email">Email address</label>
+							<input type="text" class="form-control" name="email" id="email" placeholder="Enter your email">
+						</div>
 					</div>
 
+					<div class="col-md-4">
+						<button type="submit" class="btn btn-danger pull-right"
+						id="firstSubscribeBtn">Subscribe</button>
+
+					</div>
 					<hr>
 				</form>
 
-	  			<div class="alert alert-info">
+	  			<div class="alert alert-info" id="firstSubscribeAlert">
 	    			<a href="#" class="close" data-dismiss="alert">&times;</a>
 	    			<strong>Success!</strong> Thank you for suscribing, you will recieve the Ebook in your email when it comes out 
 				</div>
@@ -622,7 +629,7 @@
 
 	<div class="container">
 
-		  	<div class="alert alert-info">
+		  	<div class="alert alert-info" id="contactAlert">
 		   			<a href="#" class="close" data-dismiss="alert">&times;</a>
 	   				<strong>Success!</strong> Thank you for contacting us, our team will respond back within 24 hrs
 			</div>
@@ -668,7 +675,7 @@
 
 						<div class="form-group">
 							<div class="col-lg-10 col-lg-offset-2">
-								<button type="submit" class="btn btn-primary">
+								<button type="submit" class="btn btn-primary" id="contactBtn">
 								Submit
 								</button>
 							</div>
@@ -676,14 +683,9 @@
 
 					</form>	
 
-
 				</div>
+				
 			</div>
-
-		  		<div class="alert alert-info">
-		   			<a href="#" class="close" data-dismiss="alert">&times;</a>
-	   				<strong>Success!</strong> Thank you for contacting us, our team will respond back within 24 hrs
-				</div>
 
 			<hr>
 
@@ -742,12 +744,12 @@
 					<label for="email">Email address</label>
 					<input type="text" class="form-control" name="email" id="email" placeholder="Enter your email">
 				</div>
-				<button type="submit" class="btn btn-default">Subscribe</button>
+				<button type="submit" class="btn btn-default" id="secondSubscribeBtn">Subscribe</button>
 				<hr>
 
 			</form>
 
-			<div class="alert alert-info">
+			<div class="alert alert-info" id="secondSubscribeAlert">
 				<a href="#" class="close" data-dismiss="alert">&times;</a>
 	    		<strong>Success!</strong> Thank you for contacting us, our team will respond back within 24 hrs
 			</div>
@@ -772,7 +774,9 @@
 
 	<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"/>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+	<script src="js/script.js"></script>
 	
 </body>	
 </html>

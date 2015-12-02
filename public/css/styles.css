@@ -1,9 +1,6 @@
-/*!
- * Start Bootstrap - Round About HTML Template (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- */
-
+/* -------------------------------
+	Global Styles
+	------------------------------ */
 body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
@@ -14,4 +11,9 @@ body {
 
 footer {
     margin: 50px 0;
+}
+
+.alert {
+	margin-top: 20px;
+	display: none;
 }
