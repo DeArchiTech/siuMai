@@ -1,3 +1,4 @@
+6
 var express = require('express');
 var app = express();
 var routes = require('./routes/myindex');
@@ -23,6 +24,8 @@ app.set('view engine', 'ejs');
 
 app.get('/', routes);
 
+app.get('/about', routes);
+
 app.get('/contact', function(req,res){
 
  	var email =  'admin@easyasolution.com'
@@ -42,7 +45,15 @@ app.get('/contact', function(req,res){
     	text: text
 	});
 
+    res.render('default', {
+        title: 'Home',
+        classname: 'home',
+        users: ['Ray', 'Morten', 'James']
+    });
+    
+    /*
 	res.send("form submitted to: " + email +'\n'+ "We will respond to your inquery within 48 hours")
+    */
 
 });
 
@@ -58,15 +69,22 @@ app.get('/subscribe', function(req,res){
     var positiveMessage = 'Yes! +1 Subscriber, keep it going buddy'
 
     var text = subscriptionSubtext + emailSubText + positiveMessage
+
 	transporter.sendMail({
     	to: email,
     	subject: subject,
     	text: text
 	});
 
-	res.send("Thank you for subscribing! " + subscription +'\n'
+    res.render('default', {
+        title: 'Home',
+        classname: 'home',
+        users: ['Ray', 'Morten', 'James']
+    });
+
+	/*res.send("Thank you for subscribing! " + subscription +'\n'
         +"We will send you free materials to your email: " + useremail
-        +" As soon as possible")
+        +" As soon as possible")*/
 
 });
 
